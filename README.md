@@ -1,2 +1,2 @@
-# passwowrd_complexity
+# password_complexity
 Сервис для предсказания популярности паролей 
