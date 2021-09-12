@@ -1,0 +1,82 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}How frequent is this password?{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="text-center">
+        <div class="card-reader">
+            <h3>DMIA Production ML: How frequent is this password?</h3>
+        </div>
+        
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <p>
+                    <small>Kaggle competition:
+                        <a href="https://www.kaggle.com/c/dmia-production-ml-2021-1-passwords/"> Link </a>
+                    </small>
+                </p>
+                <form method="POST">
+                    <label class="sr-only">Input password:</label>
+                    <input type="text" class="form-control" name="password" id="password" placeholder="Input password here">
+                    <button type="submit" class="btn btn-primary btn-block mt-2" name="action">Predict</button>
+                </form>
+
+                <form>
+                    <div class="form-row mt-5">
+                    <div class="col">
+                    <label for="password_id">Password</label>
+                    <input type="text" class="form-control" id="prediction_id" placeholder="{{ prediction }}" readonly>
+                        <h1>Lelll</h1>
+                    <form method="POST">
+                        <input type="text" , name="title", id="title", class="form-control"><br>
+                    </form>
+                        </div>
+                    </div>
+                </form>
+            </blockquote>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+{% endblock %}
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Привет</title>
+</head>
+<body>
+    <h1>Привет Ингуш!</h1>
+</body>
+</html> -->
+
+
+
+
+
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous">
+    <title>How frequent is this password?</title>
+</head> -->
+

@@ -1,0 +1,19 @@
+base:
+  random_state: 42
+  log_level: DEBUG
+
+
+make_dataset:
+  train_dataset: data/train.csv
+  test_dataset: data/Xtest.csv
+  train_features_interim: data/interim/train_features.feather
+  train_target_processed: data/processed/train_target.feather
+  test_features_interim: data/interim/test_features.feather
+
+build_features:
+  train_features_processed: data/processed/train_features.feather
+  test_features_processed: data/processed/test_features.feather
+
+train_model:
+  model_path: models/model_config.joblib
+  
