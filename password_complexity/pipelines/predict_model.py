@@ -1,5 +1,5 @@
 '''
-Train pipeline and save best result
+Predict pipeline
 '''
 import argparse
 
@@ -14,8 +14,6 @@ import os
 from pathlib import Path
 
 
-# print('текущий путь',os.path.abspath(''))
-# print()
 # print()
 config_path=Path.cwd().joinpath('CONFIG_PATH.yaml')
 # print('путь к файлу со всеми путями',config_path)

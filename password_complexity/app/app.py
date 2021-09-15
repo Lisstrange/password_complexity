@@ -7,11 +7,11 @@ from flask import Flask, request, jsonify, render_template
 from flask_bootstrap import Bootstrap
 from flask.wrappers import Response
 from werkzeug.wrappers import response
-from password_complexity.pipelines.predict_model import predict_model#, train_model
+from password_complexity.pipelines.predict_model import predict_model
+from password_complexity.pipelines.train_model import train_model
 from password_complexity.features.generate import generate_features
 # from lstm_model.base_model import PasswordLSTM
 # from lstm_model.utils import response_json
-
 
 CONFIG_PATH= 'CONFIG_PATH.yaml'
 # Flask instance
@@ -58,29 +58,19 @@ def predict():
     return prediction 
 
 
-@app.route('/train_model', methods=['GET'])
-def train_model() -> str:
-    """
-    load last model config pipeline and train model with tuning hyperparameters
-    """
+# @app.route('/train_model', methods=['GET'])
+# def train_model_() -> str:
+#     """
+#     load last model config pipeline and train model with tuning hyperparameters
+#     """
 
 
 
+#     return train_model
 
-    return 'Train completed!'
-# @app.route("/", methods=["POST", "GET"])
-# def index():
-#     """Main form rendering"""
-#     if request.method == "POST":
-#         action = request.form["action"] == "predict"
-#         pw = request.form["password"]
-#         pass_freq = password_model.predict(pw)
-#         return render_template("index.html", password=pw, prediction=pass_freq)
-#     else:
-#         return render_template("index.html")
-
-
-
+@app.route("/update_dataseet")
+def update_dataseet():
+    return "Привет Нелли!"
 
 if __name__ == "__main__":
     # for development set "debug=True" in app.run
