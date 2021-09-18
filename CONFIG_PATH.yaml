@@ -3,6 +3,7 @@ base:
   log_level: DEBUG
 
 
+
 make_dataset:
   train_dataset: data/train.csv
   test_dataset: data/Xtest.csv
@@ -16,4 +17,5 @@ build_features:
 
 train_model:
   model_path: models/model_config.joblib
+  train_size: 0.67
   

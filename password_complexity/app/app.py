@@ -3,7 +3,7 @@ import pathlib
 from pathlib import Path
 from typing import Text, Union
 
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, redirect, url_for
 from flask_bootstrap import Bootstrap
 from flask.wrappers import Response
 from werkzeug.wrappers import response
@@ -34,6 +34,10 @@ app = Flask(__name__)
 app = Flask(__name__)
 Bootstrap(app)
 
+# @app.route('/')
+# def redir():
+#     return redirect(url_for('train_model_'))
+
 @app.route('/', methods=['POST', "GET"])
 def index() -> Union[Response, Text]:
     """Password prediction form processing.
@@ -58,19 +62,13 @@ def predict():
     return prediction 
 
 
-# @app.route('/train_model', methods=['GET'])
-# def train_model_() -> str:
-#     """
-#     load last model config pipeline and train model with tuning hyperparameters
-#     """
-
-
-
-#     return train_model
-
-@app.route("/update_dataseet")
-def update_dataseet():
-    return "Привет Нелли!"
+@app.route('/train_model', methods=['GET'])
+def train_model_() -> str:
+    """
+    load last model config pipeline and train model with tuning hyperparameters
+    """
+    train_model(CONFIG_PATH)
+    return redirect(url_for('index'))
 
 if __name__ == "__main__":
     # for development set "debug=True" in app.run
