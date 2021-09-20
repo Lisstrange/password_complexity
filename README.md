@@ -31,4 +31,11 @@
 В качестве реализации я использовал Pipeline архитектуру. Главный плюс данного выбора - он проще в реализации и гораздо удобнее в его изменении, так как каждый метод пайплайна изолирован и никак не связан с остальными.
 Каждый отдельный скрипт я писал в отдельном python файле и импортировал эти методы как кастомные библиотеки с помощью setuptools. Всю методы я обернул в один Pipeline из библиотеки sklearn в отдельный файл [pipeline_structure.py](https://github.com/Lisstrange/password_complexity/blob/main/password_complexity/utils/pipeline_structure.py). В pipeline_structure.py написана готовая архитектура, которую мы можем изменять независимо от других методов. 
 На данный момент в стрктуре пайплайна реализовано 2 первых конечных процессов из 3;
-<img width=800 align='center'> src="https://github.com/Lisstrange/benchmark/blob/main/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202021-09-21%20%D0%B2%2000.25.36.png" alt="bench">
+<img width=800 src="https://github.com/Lisstrange/benchmark/blob/main/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202021-09-21%20%D0%B2%2000.25.36.png" alt="bench">
+Данный пайплайн проходить через байесовский алгоритм подбора гиперпараметров OptunaSearchCV. Мы можем самостоятельно указывать пространство признаков пайплайна в файле [hyperparameters.py](https://github.com/Lisstrange/password_complexity/blob/main/password_complexity/utils/hyperparameters.py). Данный файл импортируется во время обучения модели.
+Для обучения модели использовалась метрика RMSLE Score. Так как данная метрика не предоставляется в библиотеке sklearn , я создал отдельный файл с реализацией кастомных метрик и оптимизацией их под метрики sklearn в файле [metrics.py](https://github.com/Lisstrange/password_complexity/blob/main/password_complexity/metrics/metrics.py). 
+Для каждого пайплайна я сделал возможность обращения через argparse. Каждый метод можно протестировать отдельно. 
+Обученная пайплайн архитектура с нужными гиперпараметрами и весами сохраняется в формате joblib.
+
+Для реализации базового приложения испоьлзовал библиотеку Flask. На данный момент приложение может предсказывать частоту встречаемости пароля и так же она может дообучиться через фрон оболочку;
+<img width=800 src="https://github.com/Lisstrange/benchmark/blob/main/Password_app_front.jpeg" alt="bench">
