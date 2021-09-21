@@ -43,3 +43,18 @@
 
 <img width=800 src="https://github.com/Lisstrange/benchmark/blob/main/Password_app_front.jpeg" alt="bench">
 
+---
+
+# Требования:
+- python 3.9.0
+- poetry
+
+# Установка:
+- клонируем репозиторий
+- в терминале проекта прописываем команды:
+
+```
+make requirements
+make downloads
+poetry run python password_complexity/app/app.py
+```
