@@ -58,3 +58,4 @@ make requirements
 make downloads
 poetry run python password_complexity/app/app.py
 ```
+- скопировать ссылку в терминале и вставить её в любой браузер
