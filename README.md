@@ -59,3 +59,7 @@ make downloads
 poetry run python password_complexity/app/app.py
 ```
 - скопировать ссылку в терминале и вставить её в любой браузер
+# Установка через Docker:
+```
+docker run lisstrange/password_coplexity
+```
