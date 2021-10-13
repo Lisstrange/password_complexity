@@ -10,36 +10,14 @@ from werkzeug.wrappers import response
 from password_complexity.pipelines.predict_model import predict_model
 from password_complexity.pipelines.train_model import train_model
 from password_complexity.features.generate import generate_features
-# from lstm_model.base_model import PasswordLSTM
-# from lstm_model.utils import response_json
-
 CONFIG_PATH= 'CONFIG_PATH.yaml'
 # Flask instance
 app = Flask(__name__)
-# config = toml.load("config.toml")
-# # TODO: model_folder should be in config
-# model_folder = "model"
-
-# Model class instance
-# password_model = PasswordLSTM(
-#     config=config,
-#     model_serialized=os.path.join(model_folder, "one_epoch_model"),
-#     tokenizer=os.path.join(model_folder, "tokenizer.pickle"),
-# )
-
-
-
-
-
-app = Flask(__name__)
 Bootstrap(app)
-
-# @app.route('/')
-# def redir():
-#     return redirect(url_for('train_model_'))
 
 @app.route('/', methods=['POST', "GET"])
 def index() -> Union[Response, Text]:
+    print('test')
     """Password prediction form processing.
 
     Returns:
@@ -72,7 +50,6 @@ def train_model_() -> str:
 
 if __name__ == "__main__":
     # for development set "debug=True" in app.run
-    app.run(host="0.0.0.0", threaded=False, debug=True)
-
+    app.run(host="0.0.0.0", port=9000, threaded=True, debug=True)
 
 

@@ -1,8 +1,10 @@
-FROM python:3.9-slim-buster
+FROM --platform=linux/amd64 amd64/python:3.9-slim-buster as build-amd64 
 RUN apt-get update && \
     apt-get install -y curl libgomp1
 
+# FROM --platform=linux/arm64 arm64v8/python:3.9-slim-buster as build-arm64 # мак 
 
+# FROM --platform=Windows/x86-64 winamd64/python:3.9-slim-buster as build-winamd64
 
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
@@ -39,3 +41,4 @@ ENV FLASK_APP="password_complexity/app/app.py"
 
 
 CMD ["poetry", "run", "flask", "run", "--host=0.0.0.0"]
+

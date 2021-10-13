@@ -1,0 +1,12 @@
+version: "3"
+services:
+  password_complexity:
+    build: /
+    restart: always
+    image: lisstrange/password_complexity
+    # command: poetry run python app.py
+    ports:
+      - 9095:5000
+    # volumes:
+    #   - ./flask-app:/opt/flask-app
+
