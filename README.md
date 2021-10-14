@@ -60,9 +60,13 @@ poetry run python password_complexity/app/app.py
 ```
 - скопировать ссылку в терминале и вставить её в любой браузер
 # Установка через Docker:
+Данный контейнер есть на DockerHub, вы можете запусть его с помощью команды
+```
+docker run -p 9095:5000 lisstrange/password_complexity
+```
 Вы можете просто собрать контейнер и запустьить его , бробросив нужные порты: 
 ```
-docker -t password_complexity .
+docker build -t password_complexity .
 docker run -p 9095:5000 password_complexity
 ```
 Либо, вы можете просто воспользоваться docker compose:
