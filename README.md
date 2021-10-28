@@ -64,7 +64,7 @@ poetry run python password_complexity/app/app.py
 ```
 docker run -p 9095:5000 lisstrange/password_complexity
 ```
-Вы можете просто собрать контейнер и запустьить его , бробросив нужные порты: 
+Вы можете просто собрать контейнер и запустить его , пробросив нужные порты: 
 ```
 docker build -t password_complexity .
 docker run -p 9095:5000 password_complexity
